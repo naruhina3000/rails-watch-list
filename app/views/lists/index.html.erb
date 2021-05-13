@@ -1,0 +1,13 @@
+<h1>Moviefy</h1>
+<p>Create your own movie lists</p>
+
+<h2>Your Lists</h2>
+<%= link_to 'Add List', new_list_path %>
+
+<% @lists.each do |list| %>
+<p><%= list.name %></p>
+<%= link_to 'Show', list_path %>
+<%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+
