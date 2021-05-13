@@ -5,8 +5,7 @@
 <%= link_to 'Add List', new_list_path %>
 
 <% @lists.each do |list| %>
-<p><%= list.name %></p>
-<%= link_to 'Show', list_path %>
+<p><%= link_to "#{list.name}", list_path(list.id) %></p>
 <%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 

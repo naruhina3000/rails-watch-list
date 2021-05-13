@@ -2,5 +2,7 @@
 
 <%= simple_form_for @list do |f| %>
     <%= f.input :name %>
-    <%= f.button :submit %>
+    <%= f.submit "Submit" %>
 <% end %>
+
+<%= link_to 'Back', root_path %>
