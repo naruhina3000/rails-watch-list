@@ -1,5 +1,11 @@
 <h1><%= @list.name %></h1>
 
+<% if @list.photo.attached? %>
+<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+<% else %>
+<%= image_tag "list_placeholder", alt: "cinema", width: 200 %>
+<% end %>
+
 <%= link_to 'Add Movie', new_list_bookmark_path(@list.id) %>
 
 <div class="container py-3">
