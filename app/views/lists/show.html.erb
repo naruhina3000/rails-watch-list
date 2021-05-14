@@ -2,6 +2,15 @@
 
 <%= link_to 'Add Movie', new_list_bookmark_path(@list.id) %>
 
-<%  %>
+<div class="container py-3">
+  <div class="cards">
+    <% @list.bookmarks.each do |bookmark| %>
+        <h3><%= bookmark.movie.title%></h3>
+        <p><%= bookmark.comment%></p>
+        <%= link_to "Delete", bookmark_path(bookmark), method: :delete, class: "delete-link btn btn-sm btn-danger" %>
+      </div>
+    <% end %>
+    </div>
+</div>
 
 <%= link_to 'Back', root_path %>
